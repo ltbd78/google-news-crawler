@@ -1,0 +1,58 @@
+v1.2.4
+- added options: loops, page_limit, timeout
+- renamed variables
+- moved initial crawl to worker() in main.py
+
+v1.2.3
+- webcrawler.py
+    - added success / fail counter
+    - edited print statements
+- article_extractor.py
+    - 'articles in file' counter changed to old+new
+- edited ReadMe
+
+v1.2.2
+- edited TODO
+- added ReadMe
+- added license
+- webcrawler.py
+    - prints query
+- changed 'main thread' to 'main'
+- prints additional info to cmd
+
+
+v1.2.1
+- added a pseudo-browser (added headers to urllib to enable more websites to crawl)
+- added query to main thread
+
+
+v1.2.0
+NOTE: before running, delete old News Archive folder from v2.1!
+- webcrawler.py and article_extractor.py can no longer run independently as two threads
+- dependent on archive_dict.getkeys() == glob(filenames)
+- added [source, url] to .csv
+    - webcrawler.py now dumps [source, url] to archive_dict.pkl
+    - article_extractor.py now reads archive_dict.pkl
+    - article_extractor.py now must wait for webcrawler.py to finish building archive_dict.pkl before running
+- main thread changed to accommodate for above
+
+
+v1.1.1
+- added path compatibility to Linux/Mac
+- prints download exceptions
+- print(news.source.text)
+- query = query.replace(' ', '%20')
+
+
+v1.1.0
+- Added article extractor pipeline
+
+
+TODO:
+- sometimes download gets stuck on Mac
+- look into UnknownTimezoneWarning
+- find site author
+- check if keeping client open will improve performance speed
+- use JSON instead of pickle
+- writing an actual package (https://www.youtube.com/watch?v=sPJ28bdBH-w)
+- import argparse
